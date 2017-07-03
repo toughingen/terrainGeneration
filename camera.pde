@@ -1,16 +1,20 @@
 void mouseWheel(MouseEvent event) {
   float e = event.getCount();
+  
+  zoom += event.getAmount() / 10;
+  xo -= event.getAmount() * mouseX / 10;
+  yo -= event.getAmount() * mouseY / 10;
+  /*
   if (e <= 0) {
     zoom += .08;
-    xo = 2*xo-mouseX;
-    yo = 2*yo-mouseY;
+    
   } else {
     zoom -= .08;
-  }
+  }*/
 }
 
 void keyPressed() {
-  if (key == ENTER) 
+  if (key == 'r') 
   {
     angle = 0;
     zoom = 1;
